@@ -1,0 +1,1 @@
+Some small functions from the first week. Try them out in GHCi!
