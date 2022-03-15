@@ -1,0 +1,3 @@
+The first part of `DList.hs` defines the basic operations on *difference lists* as shown in the lecture.
+
+The second part has two implementations of a gcd function. The function logs the arguments to which it is applied during the recursion. The first implementation uses normal lists to build the log, while the second uses difference lists. It makes sense to use difference lists because new entries are always added to the *end* of the log.

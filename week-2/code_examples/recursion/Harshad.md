@@ -1,0 +1,1 @@
+A positive integer $n$ is called a *Harshad* number if $n$ is divisible by the sum of digits in $n$. Write a function that checks whether a number is Harshad or not.
