@@ -30,13 +30,17 @@ diff set1 set2 el = set1 el && set2 el
 -- Returns whether all integers
 -- in the range [-b, b] within `s` satisfy `p`.
 forall :: Int -> FunSet -> (Int -> Bool) -> Bool
-forall b set p = aux (-b)
-    where aux y | y == b = True
-                | intersect set p y = aux (y+1)
-                | not (set y) = aux (y+1)
-                | otherwise = False
+-- forall b set p = aux (-b)
+--     where aux y | y == b = True
+--                 | intersect set p y = aux (y+1)
+--                 | not (set y) = aux (y+1)
+--                 | otherwise = False
+forall b set p = all p (filter set [-b..b])
+-- forall b set p = all (\el -> p el || not (set el)) [-b..b]
 -- testing code:
 -- forall 4 (union (singletonSet 2) (singletonSet 3)) even
+-- False
+-- forall 4 (union (singletonSet 2) (singletonSet 0)) even
 -- True
 
 -- Given a bound b, a set s, and a property 'p'
